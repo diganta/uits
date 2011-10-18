@@ -2,6 +2,8 @@
 
 require 'rubygems'
 require 'bundler'
+require 'openssl'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -11,19 +13,29 @@ rescue Bundler::BundlerError => e
 end
 require 'rake'
 
+begin
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "uits"
+  gem.required_ruby_version = ">= 1.8.6"
   gem.homepage = "http://github.com/diganta/uits"
+  gem.platform = Gem::Platform::RUBY
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Get UITS code for audio file.}
+  gem.description = %Q{Gem to get UITS code.}
   gem.email = "diganta@circarconsulting.com"
-  gem.authors = ["Diganta"]
+  gem.authors = ["Diganta Mandal"]
+  gem.version = "0.0.1"
+  gem.add_development_dependency "shoulda", ">= 0"
+  gem.add_dependency "rails", ">= 2.3.0"
+  gem.add_dependency "nokogiri", "1.5.0"
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
