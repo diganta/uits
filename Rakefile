@@ -26,7 +26,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Gem to get UITS code.}
   gem.email = "diganta@circarconsulting.com"
   gem.authors = ["Diganta Mandal"]
-  gem.version = "0.0.1"
+  gem.version = "0.0.0"
   gem.add_development_dependency "shoulda", ">= 0"
   gem.add_dependency "nokogiri", "1.5.0"
   # dependencies defined in Gemfile
