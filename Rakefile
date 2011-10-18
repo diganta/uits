@@ -28,7 +28,6 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Diganta Mandal"]
   gem.version = "0.0.1"
   gem.add_development_dependency "shoulda", ">= 0"
-  gem.add_dependency "rails", ">= 2.3.0"
   gem.add_dependency "nokogiri", "1.5.0"
   # dependencies defined in Gemfile
 end
